@@ -25,16 +25,19 @@ https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js -->
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
+  <h1>UFO Sightings</h1>
+  <h3>The Truth is out There</h3>
+  <div class="container-fluid">
+    <!-- <div class="row">
       <div class="col-md-4">
-        <div class="form-group">
+        <div class="form-group" id="myForm">
           <input type="text" class="form-control" id="dt" placeholder="Enter Search Date">
           <a id="search" class="btn btn-default">Search</a>
-        </br>
+          <input type="button" onclick="myFunction()" value="Reset form"> -->
+        <!-- </br>
           <input type="text" class="form-control" id="cty" placeholder="Enter Search City">
           <!--<a id="searchcity" class="btn btn-default">Search By City</a>-->
-        </br>
+        <!-- </br>
         <input type="text" class="form-control" id="sta" placeholder="Enter Search State">
         </br>
         <input type="text" class="form-control" id="cntry" placeholder="Enter Search Country">
@@ -42,8 +45,8 @@ https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js -->
         <input type="text" class="form-control" id="shp" placeholder="Enter Search Shape">
 
         </div>
-      </div>
-    </div>
+      </div>  -->
+    <!-- </div> -->
 
     <!-- Attemping to add show # of entries -->
     <!-- Source: https://datatables.net/examples/basic_init/alt_pagination.html -->
@@ -73,10 +76,12 @@ https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js -->
 <!--  </nav> -->
 
 <!-- Adding Table -->
+<form id="myForm">
     <div class="row">
+    <div class="form-group" id="myForm">
       <div class="col-md-12">
         <!-- I am adding the following to the table below for pagination id="example" class="display"  -->
-        <table id="example" class="table table-striped display">
+        <table id="example" class="table table-striped display table-bordered">
           <thead>
             <tr>
               <th>DateTime</th>
@@ -87,6 +92,16 @@ https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js -->
               <th>Duration</th>
               <th>Comments</th>
             </tr>
+            <tr>
+              <th> <input type="text" class="form-control" id="dt" placeholder="Enter Search Date"></th>
+              <th><input type="text" class="form-control" id="cty" placeholder="Enter Search City"></th>
+              <th> <input type="text" class="form-control" id="sta" placeholder="Enter Search State"></th>
+              <th><input type="text" class="form-control" id="cntry" placeholder="Enter Search Country"></th>
+              <th><input type="text" class="form-control" id="shp" placeholder="Enter Search Shape"></th>
+              <th><button type="reset" onclick="myFunction()" value="Reset"  class="btn btn-success right">Reset</button></th>
+              <!-- <input type="button" onclick="myFunction()" value="Reset form"> -->
+              <th><a id="search" class="btn btn-default">Search</a></th>
+            </tr>
           </thead>
           <tbody>
           </tbody>
@@ -94,6 +109,20 @@ https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js -->
       </div>
     </div>
   </div>
+</form>
+
+  <!-- <script>
+    function myFunction() {
+        document.getElementById("myForm").reset();
+    }
+    </script> -->
+
+    <script>
+        function myFunction() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+
   <script src="data.js" type="text/javascript"></script>
   <script src="index.js" type="text/javascript"></script>
   <script
